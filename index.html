@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maharadja Store Kota Blitar - Spesialis Servis HP Profesional & Terpercaya</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        maharadja: {
+                            50: '#f0f3ff',
+                            100: '#e4ebff',
+                            200: '#cdd9ff',
+                            300: '#a7bcff',
+                            400: '#7b95ff',
+                            500: '#536aff',
+                            600: '#3241f5',
+                            700: '#262fdb',
+                            800: '#2026b1',
+                            900: '#20268c',
+                            DEFAULT: '#3b5998', // Matching user logo blue base
+                        },
+                        accent: '#00f0ff', // Cyber Ice Blue
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom Smooth Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b5998;
+        }
+
+        /* Custom Cursor for non-touch devices */
+        @media (pointer: fine) {
+            .custom-cursor {
+                width: 20px;
+                height: 20px;
+                border: 2px solid rgba(0, 240, 255, 0.5);
+                border-radius: 50%;
+                position: fixed;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                z-index: 9999;
+                transition: width 0.2s, height 0.2s, background-color 0.2s;
+            }
+            .custom-cursor-dot {
+                width: 4px;
+                height: 4px;
+                background-color: #00f0ff;
+                border-radius: 50%;
+                position: fixed;
+                transform: translate(-50%, -50%);
+                pointer-events: none;
+                z-index: 9999;
+            }
+            .hover-active .custom-cursor {
+                width: 40px;
+                height: 40px;
+                background-color: rgba(0, 240, 255, 0.1);
+                border-color: #00f0ff;
+            }
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(0, 240, 255, 0.3);
+            box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.15);
+            transform: translateY(-4px);
+        }
+
+        /* Scroll Animation States */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Gradient backgrounds */
+        .bg-mesh {
+            background-color: #0b0f19;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 89, 152, 0.15) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(0, 240, 255, 0.08) 0, transparent 50%);
+        }
+    </style>
+</head>
+<body class="bg-mesh text-slate-100 font-sans overflow-x-hidden relative min-h-screen">
+
+    <!-- Custom Cursor elements (hidden on mobile) -->
+    <div class="custom-cursor hidden md:block" id="customCursor"></div>
+    <div class="custom-cursor-dot hidden md:block" id="customCursorDot"></div>
+
+    <!-- Background Decorative Light Orbs -->
+    <div class="absolute top-[20%] left-[10%] w-72 h-72 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+    <div class="absolute top-[60%] right-[5%] w-80 h-80 bg-accent/5 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6285815661278?text=Halo%20Maharadja%20Store%20Kota%20Blitar,%20saya%20mau%20tanya%20tentang%20perbaikan%20HP" target="_blank" class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-gradient-to-r from-emerald-500 to-green-600 hover:from-accent hover:to-maharadja text-white hover:text-slate-950 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 group border border-emerald-400/30 animate-bounce">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <!-- Floating tooltip label -->
+        <span class="absolute right-16 scale-0 transition-all duration-200 group-hover:scale-100 bg-slate-900/95 text-slate-100 text-xs font-bold py-2 px-4 rounded-xl border border-white/10 whitespace-nowrap shadow-xl">Hubungi WhatsApp</span>
+    </a>
+
+    <!-- Header Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 glass transition-all duration-300 py-4 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-2.5 group md:mr-12">
+                <!-- Minimalist Service Icon -->
+                <div class="w-10 h-10 bg-maharadja/20 border border-maharadja/40 rounded-xl flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                    <i class="fa-solid fa-screwdriver-wrench text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-lg font-extrabold tracking-wider bg-gradient-to-r from-white via-slate-200 to-accent bg-clip-text text-transparent">MAHARADJA</span>
+                    <span class="block text-[10px] text-accent font-semibold tracking-widest uppercase">Store Kota Blitar</span>
+                </div>
+            </a>
+
+            <!-- Nav Links - Desktop -->
+            <nav class="hidden md:flex items-center gap-10 ml-auto">
+                <a href="#beranda" class="text-sm font-medium hover:text-accent transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent pointer-events-auto after:transition-all hover:after:w-full">Beranda</a>
+                <a href="#layanan" class="text-sm font-medium hover:text-accent transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent pointer-events-auto after:transition-all hover:after:w-full">Layanan</a>
+                <a href="#estimator" class="text-sm font-medium hover:text-accent transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent pointer-events-auto after:transition-all hover:after:w-full">Estimasi Harga</a>
+                <a href="#ai-consultant" class="text-sm font-medium text-accent hover:text-white transition-colors flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles"></i> Asisten AI</a>
+                <a href="#kontak" class="text-sm font-medium hover:text-accent transition-colors relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-accent pointer-events-auto after:transition-all hover:after:w-full">Kontak</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-2xl focus:outline-none text-slate-300" id="menuToggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div class="hidden md:hidden absolute top-full left-0 w-full glass border-t border-white/5 py-6 px-8 flex flex-col gap-4" id="mobileMenu">
+            <a href="#beranda" class="text-base font-semibold py-2 border-b border-white/5 hover:text-accent transition-colors">Beranda</a>
+            <a href="#layanan" class="text-base font-semibold py-2 border-b border-white/5 hover:text-accent transition-colors">Layanan</a>
+            <a href="#estimator" class="text-base font-semibold py-2 border-b border-white/5 hover:text-accent transition-colors">Estimasi Harga</a>
+            <a href="#ai-consultant" class="text-base font-semibold py-2 border-b border-white/5 text-accent flex items-center gap-2"><i class="fa-solid fa-wand-magic-sparkles"></i> Asisten AI Gemini</a>
+            <a href="#kontak" class="text-base font-semibold py-2 hover:text-accent transition-colors">Kontak</a>
+            <a href="https://wa.me/6285815661278" target="_blank" class="w-full text-center py-3 bg-gradient-to-r from-maharadja to-blue-700 rounded-xl text-sm font-bold flex items-center justify-center gap-2 mt-2">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Hubungi via WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="min-h-screen pt-32 pb-16 px-6 md:px-12 flex items-center max-w-7xl mx-auto relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center w-full">
+            
+            <!-- Left Info Content -->
+            <div class="lg:col-span-7 flex flex-col justify-center space-y-6 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-maharadja/20 border border-maharadja/40 rounded-full text-xs font-bold text-accent tracking-wide self-center lg:self-start animate-pulse">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> SPESIALIS SERVIS HP NOMOR #1 DI BLITAR
+                </div>
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight leading-tight">
+                    Gadget Rusak?<br>
+                    <span class="bg-gradient-to-r from-white via-maharadja-300 to-accent bg-clip-text text-transparent">Maharadja</span> Solusinya!
+                </h1>
+                <p class="text-slate-400 text-base md:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Pusat perbaikan handphone profesional di Blitar. Layanan ganti LCD, ganti baterai, perbaikan hardware, hingga software bootloop dengan jaminan garansi nyata dan harga yang transparan.
+                </p>
+
+                <!-- Floating Stats -->
+                <div class="grid grid-cols-3 gap-4 pt-4 max-w-md mx-auto lg:mx-0">
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5 text-center">
+                        <span class="block text-2xl md:text-3xl font-extrabold text-accent">6 Bulan</span>
+                        <span class="text-xs text-slate-400">Garansi Aman</span>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5 text-center">
+                        <span class="block text-2xl md:text-3xl font-extrabold text-accent">4.9 ★</span>
+                        <span class="text-xs text-slate-400">Rating GMaps</span>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl border border-white/5 text-center">
+                        <span class="block text-2xl md:text-3xl font-extrabold text-accent">30 Menit</span>
+                        <span class="text-xs text-slate-400">Selesai (Express)</span>
+                    </div>
+                </div>
+
+                <!-- Call To Actions -->
+                <div class="flex flex-col sm:flex-row items-center gap-4 pt-4 justify-center lg:justify-start">
+                    <a href="#ai-consultant" class="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-maharadja to-blue-600 hover:from-accent hover:to-maharadja hover:text-slate-950 transition-all duration-300 rounded-2xl font-bold shadow-lg shadow-maharadja/30 flex items-center justify-center gap-2.5">
+                        <i class="fa-solid fa-wand-magic-sparkles text-lg"></i> Tanya AI Estimator
+                    </a>
+                    <a href="#estimator" class="w-full sm:w-auto px-8 py-4 bg-white/5 border border-white/10 hover:border-accent/40 hover:bg-white/10 transition-all duration-300 rounded-2xl font-semibold flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-calculator"></i> Hitung Biaya Manual
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Interactive Graphic -->
+            <div class="lg:col-span-5 flex justify-center items-center relative py-10 lg:py-0">
+                <!-- Outer Glowing Rings -->
+                <div class="absolute w-72 h-72 md:w-96 md:h-96 rounded-full border border-dashed border-maharadja/30 animate-[spin_40s_linear_infinite] flex items-center justify-center">
+                    <div class="w-60 h-60 md:w-80 md:h-80 rounded-full border border-accent/20 animate-[spin_20s_linear_infinite_reverse]"></div>
+                </div>
+                
+                <!-- Central Floating Glass Panel with Smartphone Mockup -->
+                <div class="relative z-10 glass rounded-[2.5rem] p-8 md:p-12 border border-white/10 shadow-2xl flex flex-col items-center justify-center w-72 h-72 md:w-88 md:h-88 hover:scale-105 transition-transform duration-500 group">
+                    <div class="w-32 h-32 md:w-40 md:h-40 bg-gradient-to-br from-maharadja/40 to-accent/20 rounded-full flex items-center justify-center p-4 border border-accent/30 group-hover:shadow-[0_0_50px_rgba(0,240,255,0.3)] transition-all">
+                        <!-- Holographic Smartphone Visual -->
+                        <div class="relative w-14 h-24 border-4 border-slate-200 rounded-2xl flex flex-col items-center justify-between p-2 shadow-inner group-hover:border-accent transition-colors duration-300">
+                            <!-- Earpiece -->
+                            <div class="w-6 h-1 bg-slate-400 rounded-full"></div>
+                            <!-- Center Screwdriver/Wrench Repair Icon -->
+                            <div class="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent animate-pulse">
+                                <i class="fa-solid fa-screwdriver-wrench text-base"></i>
+                            </div>
+                            <!-- Home Button -->
+                            <div class="w-2.5 h-2.5 rounded-full bg-slate-500"></div>
+                        </div>
+                    </div>
+                    <span class="mt-6 text-sm font-bold tracking-widest text-slate-400 group-hover:text-accent transition-colors uppercase text-center">MAHARADJA STORE KOTA BLITAR</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Google Maps Review Carousel Section -->
+    <section class="pb-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10 reveal">
+        <div class="glass rounded-3xl p-6 md:p-10 border border-white/10 relative overflow-hidden">
+            <!-- Header Carousel -->
+            <div class="flex flex-col items-center text-center gap-4 mb-8 pb-6 border-b border-white/5">
+                <div class="w-12 h-12 bg-amber-500/10 border border-amber-500/30 rounded-2xl flex items-center justify-center text-amber-400 text-xl mx-auto">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-bold text-slate-100 flex flex-wrap justify-center items-center gap-2">
+                        Ulasan Google Maps - Maharadja Store Kota Blitar
+                        <span class="text-xs font-semibold px-2.5 py-0.5 bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 rounded-full">Terverifikasi</span>
+                    </h2>
+                    <p class="text-xs md:text-sm text-slate-400 mt-1">Real feedback dari pelanggan setia Maharadja Blitar</p>
+                </div>
+                <!-- Google Rating Badge -->
+                <div class="flex items-center justify-center gap-3 bg-slate-900/60 border border-white/5 px-4.5 py-2.5 rounded-2xl shrink-0 mt-2 mx-auto">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-6 h-6" alt="Google logo">
+                    <div class="text-left">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-sm font-extrabold text-slate-200">Rating 4.9</span>
+                            <div class="flex text-amber-400 text-[10px]">
+                                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                        <span class="block text-[10px] text-slate-500 font-medium">Berdasarkan ulasan Google Maps</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Wrapper -->
+            <div class="relative overflow-hidden w-full h-[180px] sm:h-[130px] md:h-[110px]">
+                <div id="reviewSlider" class="flex transition-transform duration-500 ease-in-out h-full">
+                    <!-- Slide 1 -->
+                    <div class="w-full shrink-0 px-2 flex flex-col justify-center h-full">
+                        <div class="flex flex-col justify-between h-full bg-slate-900/20 p-5 rounded-2xl border border-white/5">
+                            <p class="text-slate-300 italic text-sm md:text-base leading-relaxed">
+                                "Pengerjaan ganti lcd di sini cepat bisa di tunggu dan banyak diskon, dan di beri bonus perbaikan tombol sekalian"
+                            </p>
+                            <div class="flex items-center justify-between mt-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">A</div>
+                                    <span class="text-xs font-semibold text-slate-400">Aris Prasetyo <span class="text-[10px] text-accent font-normal">• Local Guide</span></span>
+                                </div>
+                                <div class="flex text-amber-400 text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="w-full shrink-0 px-2 flex flex-col justify-center h-full">
+                        <div class="flex flex-col justify-between h-full bg-slate-900/20 p-5 rounded-2xl border border-white/5">
+                            <p class="text-slate-300 italic text-sm md:text-base leading-relaxed">
+                                "Pengerjaan ganti baterai cepet banget, ditinggal keluar 10mnt balik2 udah jadi, dapat banyak diskon, terus admin di WA juga fast respon dan informatif"
+                            </p>
+                            <div class="flex items-center justify-between mt-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-purple-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">N</div>
+                                    <span class="text-xs font-semibold text-slate-400">Nadia Safitri <span class="text-[10px] text-accent font-normal">• Local Guide</span></span>
+                                </div>
+                                <div class="flex text-amber-400 text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="w-full shrink-0 px-2 flex flex-col justify-center h-full">
+                        <div class="flex flex-col justify-between h-full bg-slate-900/20 p-5 rounded-2xl border border-white/5">
+                            <p class="text-slate-300 italic text-sm md:text-base leading-relaxed">
+                                "terimakasih atas pelayanannya, untuk karyawan ganteng,imut,gemoy,ramahh dan terimakasih jg jadi bisaa gunain hp lama lagii jadi inget kenangan sma dia anjayy nangis dikit 🥲 …"
+                            </p>
+                            <div class="flex items-center justify-between mt-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-emerald-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">D</div>
+                                    <span class="text-xs font-semibold text-slate-400">Dewi Lestari <span class="text-[10px] text-accent font-normal">• Pelanggan Setia</span></span>
+                                </div>
+                                <div class="flex text-amber-400 text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="w-full shrink-0 px-2 flex flex-col justify-center h-full">
+                        <div class="flex flex-col justify-between h-full bg-slate-900/20 p-5 rounded-2xl border border-white/5">
+                            <p class="text-slate-300 italic text-sm md:text-base leading-relaxed">
+                                "Teknisi nya ramah pekerjaan juga cepat harga nya bener2 terjangkau bahkan masih di kasih voucher jadi jauh lebih murah best pokok nya👍🏻 …"
+                            </p>
+                            <div class="flex items-center justify-between mt-3">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded-full bg-amber-600 flex items-center justify-center text-[10px] font-bold text-white shadow-sm">R</div>
+                                    <span class="text-xs font-semibold text-slate-400">Rian Hidayat <span class="text-[10px] text-accent font-normal">• Local Guide</span></span>
+                                </div>
+                                <div class="flex text-amber-400 text-[10px]">
+                                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Controls & Indicators -->
+            <div class="flex items-center justify-between mt-6 pt-4 border-t border-white/5">
+                <div class="flex gap-1.5" id="sliderDots">
+                    <!-- Dots will be updated by JS -->
+                </div>
+                <div class="flex gap-2">
+                    <button onclick="prevSlide()" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-white/5 hover:border-accent/40 flex items-center justify-center text-xs text-slate-300 transition-colors">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <button onclick="nextSlide()" class="w-8 h-8 rounded-xl bg-slate-800/80 border border-white/5 hover:border-accent/40 flex items-center justify-center text-xs text-slate-300 transition-colors">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section id="layanan" class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10">
+        <div class="text-center max-w-2xl mx-auto mb-10 reveal">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Layanan Servis Unggulan Kami</h2>
+            <p class="text-slate-400">Kerusakan apa pun pada HP Anda, teknisi bersertifikat kami siap melakukan perbaikan secara transparan, aman, dan bergaransi.</p>
+        </div>
+
+        <!-- Highlight Banner -->
+        <div class="max-w-3xl mx-auto mb-14 text-center reveal">
+            <div class="inline-block bg-gradient-to-r from-maharadja/30 via-accent/20 to-maharadja/30 border border-accent/40 rounded-2xl px-6 py-4 shadow-[0_0_30px_rgba(0,240,255,0.1)]">
+                <span class="text-sm md:text-base font-extrabold tracking-wide text-slate-100 flex items-center justify-center gap-2.5 uppercase">
+                    <i class="fa-solid fa-tags text-accent animate-pulse"></i> 
+                    cek semua jenis kerusakan gratis tidak dipungut biaya apapun
+                </span>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <!-- Service item 1: Ganti LCD -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Ganti LCD & Touchscreen</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Layar pecah, bergaris, atau mati total? Kami ganti dengan LCD berkualitas terbaik. Lengkap dengan garansi penuh untuk kenyamanan Anda.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: 45 Menit</span>
+                    <span class="text-accent font-semibold">Mulai Rp 200rb</span>
+                </div>
+            </div>
+
+            <!-- Service item 2: Ganti Baterai -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-battery-three-quarters"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Ganti Baterai HP</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Baterai cepat kembung, boros, atau sering mati mendadak? Ganti baterai original/high capacity bergaransi resmi dari offline store Blitar.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: 30 Menit</span>
+                    <span class="text-accent font-semibold">Mulai Rp 150rb</span>
+                </div>
+            </div>
+
+            <!-- Service item 3: Penggantian Tombol -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-toggle-on"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Penggantian Tombol</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Tombol power keras, volume tidak berfungsi, atau sakelar bagian dalam rusak? Penggantian komponen tombol presisi agar kembali empuk dan responsif.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: 30 Menit</span>
+                    <span class="text-accent font-semibold">Mulai Rp 75rb</span>
+                </div>
+            </div>
+
+            <!-- Service item 4: Konektor Cas -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-plug-circle-bolt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Penggantian Konektor Cas</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        HP tidak bisa dicas atau dicas sangat lambat? Kami tangani servis konektor USB/Type-C hingga penggantian modul papan cas secara presisi.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: 1 Jam</span>
+                    <span class="text-accent font-semibold">Mulai Rp 75rb</span>
+                </div>
+            </div>
+
+            <!-- Service item 5: Bypass & FRP -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-unlock-keyhole"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Bypass Akun & FRP</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Lupa password kunci layar, akun Google (FRP), Apple ID terkunci, atau stuck logo (bootloop)? Flash OS resmi & bypass aman agar aktif kembali.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: 1-2 Jam</span>
+                    <span class="text-accent font-semibold">Mulai Rp 100rb</span>
+                </div>
+            </div>
+
+            <!-- Service item 6: Servis Mesin & IC -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Servis Mesin & IC</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Kerusakan berat pada CPU, IC Power, atau EMMC/UFS (mati total, restart terus menerus) ditangani dengan mikroskop digital modern oleh teknisi ahli.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: 1-3 Hari</span>
+                    <span class="text-accent font-semibold">Mulai Rp 350rb</span>
+                </div>
+            </div>
+
+            <!-- Service item 7: Water Damage -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-droplet-slash"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Water Damage</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Pertolongan pertama HP masuk air! Pembersihan korosi ultrasonik, pengeringan mesin secara total, dan perbaikan jalur arus listrik mati total secara aman.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: Kondisional</span>
+                    <span class="text-emerald-400 font-bold uppercase">Pengecekan Fisik Gratis</span>
+                </div>
+            </div>
+
+            <!-- Service item 8: Penghapusan Iklan -->
+            <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
+                <div>
+                    <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
+                        <i class="fa-solid fa-rectangle-ad"></i>
+                    </div>
+                    <h3 class="text-lg font-bold mb-2">Penghapusan Iklan Mengganggu</h3>
+                    <p class="text-slate-400 text-xs leading-relaxed">
+                        Layar HP Anda sering memunculkan iklan popup sendiri yang sangat mengganggu, lambat, atau terkena adware? Kami bantu bersihkan sistemnya sampai tuntas.
+                    </p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
+                    <span>Estimasi Kerja: 15 Menit</span>
+                    <span class="text-emerald-400 font-bold uppercase">Gratis</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Dynamic Calculator & Estimator Section -->
+    <section id="estimator" class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10 reveal">
+        <div class="glass rounded-3xl p-8 md:p-12 border border-white/10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Description Side -->
+                <div class="lg:col-span-5 flex flex-col justify-center space-y-6">
+                    <div class="w-12 h-12 bg-accent/10 border border-accent/30 rounded-2xl flex items-center justify-center text-accent text-xl">
+                        <i class="fa-solid fa-calculator"></i>
+                    </div>
+                    <h2 class="text-3xl font-extrabold">Estimator Biaya Servis Terbuka</h2>
+                    <p class="text-slate-400 leading-relaxed">
+                        Kami sangat menjunjung tinggi transparansi harga. Gunakan alat hitung mandiri kami untuk memproyeksikan estimasi biaya suku cadang dan jasa berdasarkan jenis HP Anda.
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-accent"></i> Tanpa Biaya Tersembunyi
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-accent"></i> Sudah Termasuk Biaya Pasang
+                        </div>
+                        <div class="flex items-center gap-3 text-sm text-slate-300">
+                            <i class="fa-solid fa-circle-check text-accent"></i> Jaminan Garansi Resmi
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Calculator Side -->
+                <div class="lg:col-span-7 bg-slate-900/60 rounded-2xl p-6 md:p-8 border border-white/5">
+                    <h3 class="text-lg font-bold mb-6 text-slate-200">Pilih Spesifikasi & Kerusakan</h3>
+                    <div class="space-y-5">
+                        
+                        <!-- Brand Select with manual input option -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Merek Handphone</label>
+                            <select id="brandSelect" onchange="toggleCustomBrand()" class="w-full bg-slate-950/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-slate-200 focus:outline-none focus:border-accent transition-all">
+                                <option value="" disabled selected>-- Pilih Merek HP --</option>
+                                <option value="iphone">Apple (iPhone)</option>
+                                <option value="samsung">Samsung</option>
+                                <option value="xiaomi">Xiaomi / Redmi / POCO</option>
+                                <option value="oppo">Oppo / Realme</option>
+                                <option value="vivo">Vivo</option>
+                                <option value="infinix">Infinix</option>
+                                <option value="other">Merek Lainnya (Ketik Sendiri)...</option>
+                            </select>
+                            
+                            <!-- Custom Brand Text Input -->
+                            <div id="customBrandContainer" class="hidden mt-3">
+                                <input type="text" id="customBrandInput" placeholder="Masukkan Merek HP Anda..." class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-accent transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Specific Model Input -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Seri atau Tipe HP</label>
+                            <input type="text" id="modelInput" placeholder="Contoh: iPhone 11 Pro, Samsung S21, Redmi Note 12..." class="w-full bg-slate-950/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-slate-200 focus:outline-none focus:border-accent transition-all">
+                        </div>
+
+                        <!-- Repair Type Select with manual input option -->
+                        <div>
+                            <label class="block text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Jenis Kerusakan / Tindakan</label>
+                            <select id="repairTypeSelect" onchange="toggleCustomRepair()" class="w-full bg-slate-950/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-slate-200 focus:outline-none focus:border-accent transition-all">
+                                <option value="" disabled selected>-- Pilih Kerusakan --</option>
+                                <option value="lcd">Ganti LCD & Touchscreen</option>
+                                <option value="battery">Ganti Baterai Baru</option>
+                                <option value="buttons">Penggantian Tombol (Power / Volume)</option>
+                                <option value="charger">Ganti Konektor Charger</option>
+                                <option value="camera">Kamera Bermasalah / Ganti Kaca Kamera</option>
+                                <option value="software">Bypass, Akun Nyangkut, Bootloop & FRP</option>
+                                <option value="board">Kerusakan Mesin / Mati Total (Bukan LCD)</option>
+                                <option value="adware">Penghapusan Iklan / Adware Mengganggu</option>
+                                <option value="other">Kerusakan Lainnya (Ketik Sendiri)...</option>
+                            </select>
+
+                            <!-- Custom Repair Text Input -->
+                            <div id="customRepairContainer" class="hidden mt-3">
+                                <input type="text" id="customRepairInput" placeholder="Tuliskan jenis kerusakan HP Anda..." class="w-full bg-slate-950/80 border border-white/15 rounded-xl px-4 py-3 text-sm text-slate-200 focus:outline-none focus:border-accent transition-all">
+                            </div>
+                        </div>
+
+                        <!-- Result Area -->
+                        <div class="mt-8 p-5 bg-gradient-to-r from-maharadja/10 to-accent/5 rounded-2xl border border-accent/20 hidden" id="estimatorResult">
+                            <div class="flex justify-between items-center mb-3">
+                                <span class="text-xs font-bold uppercase text-accent tracking-wider">Estimasi Rentang Biaya</span>
+                                <span class="text-[10px] px-2 py-0.5 bg-accent/20 text-accent rounded-full font-bold" id="costTag">Terhitung Jasa</span>
+                            </div>
+                            <div class="text-2xl md:text-3xl font-extrabold text-slate-100 animate-pulse" id="estimatedPrice">Rp -</div>
+                            <p class="text-xs text-slate-400 mt-2">
+                                *Catatan: Biaya akhir bergantung pada ketersediaan stok komponen original/OEM pilihan Anda dan hasil diagnosis mendalam teknisi kami.
+                            </p>
+                            <!-- WhatsApp CTA to claim estimate -->
+                            <a id="waClaimBtn" href="#" target="_blank" class="mt-4 w-full py-3 bg-accent text-slate-950 rounded-xl text-center text-sm font-extrabold flex items-center justify-center gap-2 hover:bg-white transition-colors">
+                                <i class="fa-brands fa-whatsapp text-lg"></i> Booking Estimasi via WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Consultant Section -->
+    <section id="ai-consultant" class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10 reveal">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 bg-accent/10 border border-accent/30 rounded-full text-xs font-bold text-accent tracking-wide mb-3">
+                <i class="fa-solid fa-sparkles"></i> REVOLUSI DIAGNOSIS CERDAS
+            </div>
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-4">Konsultasi Diagnosis AI Gemini</h2>
+            <p class="text-slate-400">
+                Deskripsikan gejala kerusakan handphone Anda secara alami (Contoh: "HP saya habis jatuh terus layarnya kedap-kedip hijau"). Asisten AI kami akan memberikan analisis instan serta perkiraan tindakan.
+            </p>
+        </div>
+
+        <!-- Interactive Chat Interface -->
+        <div class="glass rounded-3xl border border-white/10 max-w-4xl mx-auto overflow-hidden shadow-2xl">
+            <!-- Chat Header -->
+            <div class="bg-slate-900/80 px-6 py-4 border-b border-white/5 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-accent/10 border border-accent/30 rounded-xl flex items-center justify-center text-accent">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div>
+                        <span class="block font-bold text-sm text-slate-100">Asisten AI Maharadja</span>
+                        <div class="flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            <span class="text-[10px] text-slate-400 font-semibold uppercase tracking-wider">Ready to diagnose</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-[10px] font-bold px-2.5 py-1 bg-slate-800 border border-white/5 rounded-full text-slate-400">
+                    POWERED BY GEMINI 2.5
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="p-6 h-[400px] overflow-y-auto space-y-4 bg-slate-950/20" id="chatArea">
+                <!-- Welcome Message -->
+                <div class="flex gap-3 max-w-[85%]">
+                    <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 text-sm">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-900/60 border border-white/5 rounded-2xl rounded-tl-none p-4 text-sm text-slate-300 leading-relaxed shadow-sm">
+                        Halo! Saya Asisten AI dari <strong>Maharadja Store Kota Blitar</strong>. 📱🔧
+                        <br><br>
+                        Silakan ceritakan masalah gadget Anda, misalnya:
+                        <ul class="list-disc list-inside mt-2 text-slate-400 space-y-1">
+                            <li>"HP saya kecebur air, sekarang mati total"</li>
+                            <li>"Berapa estimasi ganti baterai untuk iPhone 11?"</li>
+                            <li>"Layar HP saya retak tapi sentuhannya masih bisa"</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Suggested Prompts -->
+            <div class="px-6 py-3 bg-slate-900/20 border-t border-white/5 flex flex-wrap gap-2 items-center" id="suggestedPrompts">
+                <span class="text-xs text-slate-500 font-semibold mr-1">Saran Pertanyaan:</span>
+                <button class="text-xs bg-slate-900 hover:bg-slate-800 border border-white/5 hover:border-accent/30 text-slate-300 px-3 py-1.5 rounded-full transition-all" onclick="useSuggest('Ganti LCD iPhone XR kisaran berapa?')">Ganti LCD iPhone XR?</button>
+                <button class="text-xs bg-slate-900 hover:bg-slate-800 border border-white/5 hover:border-accent/30 text-slate-300 px-3 py-1.5 rounded-full transition-all" onclick="useSuggest('HP Android bootloop mentok logo')">Android Bootloop Mentok Logo</button>
+                <button class="text-xs bg-slate-900 hover:bg-slate-800 border border-white/5 hover:border-accent/30 text-slate-300 px-3 py-1.5 rounded-full transition-all" onclick="useSuggest('HP masuk air penanganan pertamanya apa?')">HP Masuk Air?</button>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="p-4 bg-slate-900/40 border-t border-white/5 flex gap-2">
+                <input type="text" id="aiInput" placeholder="Ketik keluhan HP Anda di sini..." class="flex-1 bg-slate-950/80 border border-white/10 rounded-xl px-4 py-3.5 text-sm text-slate-200 focus:outline-none focus:border-accent transition-all" onkeypress="handleChatKeyPress(event)">
+                <button id="aiSendBtn" onclick="sendChatMessage()" class="px-6 bg-accent hover:bg-white text-slate-950 rounded-xl font-bold text-sm transition-all flex items-center justify-center gap-2">
+                    <span>Kirim</span> <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map & Contact Section -->
+    <section id="kontak" class="py-24 px-6 md:px-12 max-w-7xl mx-auto relative z-10 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left Info -->
+            <div class="lg:col-span-5 space-y-8 flex flex-col justify-center">
+                <div>
+                    <span class="block text-xs font-bold text-accent tracking-widest uppercase mb-2">Hubungi Kami</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold">Kunjungi Toko Offline Kami</h2>
+                </div>
+                <p class="text-slate-400 leading-relaxed">
+                    Kami melayani perbaikan langsung di toko maupun tanya jawab online. Silakan kunjungi tempat kami di Kota Blitar atau hubungi melalui nomor telepon tercantum untuk penawaran menarik.
+                </p>
+
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-maharadja/20 rounded-xl flex items-center justify-center border border-maharadja/40 text-accent shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-slate-200 text-sm">Alamat Store</span>
+                            <span class="text-xs text-slate-400 block mt-1">Jl. Veteran Selatan No.181, Plosokerep, Kec. Sananwetan, Kota Blitar, Jawa Timur 66134</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-maharadja/20 rounded-xl flex items-center justify-center border border-maharadja/40 text-accent shrink-0">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-slate-200 text-sm">Jam Operasional</span>
+                            <span class="text-xs text-slate-400 block mt-1">Setiap Hari: 08:00 - 21:00 WIB</span>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 bg-maharadja/20 rounded-xl flex items-center justify-center border border-maharadja/40 text-accent shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-slate-200 text-sm">WhatsApp Fast Response</span>
+                            <span class="text-xs text-slate-400 block mt-1">0858-1566-1278</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Interactive Map Embed -->
+            <div class="lg:col-span-7 h-96 lg:h-auto min-h-[380px] rounded-3xl overflow-hidden border border-white/10 relative group">
+                <!-- Google Maps Embed for Maharadja Store Kota Blitar - Veteran Selatan -->
+                <iframe src="https://maps.google.com/maps?q=Jl.%20Veteran%20Selatan%20No.181%2C%20Plosokerep%2C%20Kec.%20Sananwetan%2C%20Kota%20Blitar&t=&z=16&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-none grayscale invert" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="absolute inset-0 bg-slate-950/20 pointer-events-none group-hover:bg-slate-950/0 transition-colors duration-500"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-slate-950/40 relative z-10">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 bg-maharadja/20 border border-maharadja/40 rounded-lg flex items-center justify-center text-accent">
+                    <i class="fa-solid fa-screwdriver-wrench text-xs"></i>
+                </div>
+                <div>
+                    <span class="text-base font-extrabold tracking-wider bg-gradient-to-r from-white to-accent bg-clip-text text-transparent">MAHARADJA</span>
+                    <span class="block text-[8px] text-accent font-semibold uppercase tracking-widest">Store Kota Blitar</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-slate-500 text-center md:text-right">
+                &copy; 2026 Maharadja Store Kota Blitar. Hak Cipta Dilindungi Undang-Undang.
+            </p>
+        </div>
+    </footer>
+
+
+    <!-- Dynamic JavaScript Logic -->
+    <script>
+        // Custom Cursor Logic
+        const cursor = document.getElementById('customCursor');
+        const cursorDot = document.getElementById('customCursorDot');
+        
+        if (cursor && cursorDot) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+            });
+
+            // Hover effects for active items
+            const interactiveElements = document.querySelectorAll('a, button, select, input');
+            interactiveElements.forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('hover-active'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('hover-active'));
+            });
+        }
+
+        // Mobile Menu Toggle logic
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Review Slider Carousel Logic
+        let currentSlide = 0;
+        const totalSlides = 4;
+        const reviewSlider = document.getElementById('reviewSlider');
+        const sliderDotsContainer = document.getElementById('sliderDots');
+
+        function initSliderDots() {
+            sliderDotsContainer.innerHTML = '';
+            for (let i = 0; i < totalSlides; i++) {
+                const button = document.createElement('button');
+                button.className = `w-2 h-2 rounded-full transition-all duration-300 ${i === currentSlide ? 'bg-accent' : 'bg-slate-700'}`;
+                button.onclick = () => goToSlide(i);
+                sliderDotsContainer.appendChild(button);
+            }
+        }
+
+        function updateSlider() {
+            reviewSlider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            const dots = sliderDotsContainer.querySelectorAll('button');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.className = 'w-2 h-2 rounded-full bg-accent transition-all duration-300';
+                } else {
+                    dot.className = 'w-2 h-2 rounded-full bg-slate-700 transition-all duration-300';
+                }
+            });
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(index) {
+            currentSlide = index;
+            updateSlider();
+        }
+
+        // Autoplay reviews every 6 seconds
+        setInterval(nextSlide, 6000);
+        initSliderDots();
+
+        // Reveal Scroll Animation Logic
+        const revealElements = document.querySelectorAll('.reveal');
+        const checkReveal = () => {
+            const triggerBottom = window.innerHeight * 0.85;
+            revealElements.forEach(el => {
+                const elTop = el.getBoundingClientRect().top;
+                if (elTop < triggerBottom) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', checkReveal);
+        window.addEventListener('load', checkReveal);
+
+
+        // ================= IMPROVED ESTIMATOR LOGIC =================
+        const brandSelect = document.getElementById('brandSelect');
+        const modelInput = document.getElementById('modelInput');
+        const repairTypeSelect = document.getElementById('repairTypeSelect');
+        const estimatorResult = document.getElementById('estimatorResult');
+        const estimatedPrice = document.getElementById('estimatedPrice');
+        const costTag = document.getElementById('costTag');
+        const waClaimBtn = document.getElementById('waClaimBtn');
+
+        const customBrandContainer = document.getElementById('customBrandContainer');
+        const customBrandInput = document.getElementById('customBrandInput');
+        const customRepairContainer = document.getElementById('customRepairContainer');
+        const customRepairInput = document.getElementById('customRepairInput');
+
+        // Toggle visibility of Custom Input fields
+        function toggleCustomBrand() {
+            if (brandSelect.value === 'other') {
+                customBrandContainer.classList.remove('hidden');
+                customBrandInput.focus();
+            } else {
+                customBrandContainer.classList.add('hidden');
+                customBrandInput.value = '';
+            }
+            calculateEstimate();
+        }
+
+        function toggleCustomRepair() {
+            if (repairTypeSelect.value === 'other') {
+                customRepairContainer.classList.remove('hidden');
+                customRepairInput.focus();
+            } else {
+                customRepairContainer.classList.add('hidden');
+                customRepairInput.value = '';
+            }
+            calculateEstimate();
+        }
+
+        // Add real-time text input listeners to keep calculate estimate updated
+        modelInput.addEventListener('input', calculateEstimate);
+        customBrandInput.addEventListener('input', calculateEstimate);
+        customRepairInput.addEventListener('input', calculateEstimate);
+
+        function calculateEstimate() {
+            const brand = brandSelect.value;
+            const model = modelInput.value.trim();
+            const repair = repairTypeSelect.value;
+
+            // Don't show results yet if basic fields are empty
+            if (!brand || !repair) {
+                estimatorResult.classList.add('hidden');
+                return;
+            }
+
+            // CHECK IF CUSTOM OPTION IS SELECTED -> FORCE "TANYAKAN KE ADMIN"
+            if (brand === 'other' || repair === 'other') {
+                estimatedPrice.innerText = "Hubungi Admin via WhatsApp";
+                costTag.innerText = "Harga Spesial";
+                costTag.className = "text-[10px] px-2 py-0.5 bg-amber-500/20 text-amber-400 rounded-full font-bold";
+                
+                // Get custom brand name or use generic name
+                const customBrand = customBrandInput.value.trim() || "(Merek Kustom)";
+                const customRepair = customRepairInput.value.trim() || "(Masalah Kustom)";
+                const hpModel = model || "(Tipe belum diisi)";
+
+                const waText = encodeURIComponent(
+                    `Halo Maharadja Store Blitar, saya ingin tanya estimasi servis:\nMerek: ${customBrand}\nTipe HP: ${hpModel}\nKeluhan: ${customRepair}\nMohon info estimasi biaya servisnya Kak.`
+                );
+                waClaimBtn.href = `https://wa.me/6285815661278?text=${waText}`;
+                estimatorResult.classList.remove('hidden');
+                return;
+            }
+
+            // Normal pricing logic calculation
+            let minPrice = 0;
+            let maxPrice = 0;
+
+            switch (repair) {
+                case 'lcd':
+                    minPrice = 200000; maxPrice = 1450000;
+                    break;
+                case 'battery':
+                    minPrice = 150000; maxPrice = 450000;
+                    break;
+                case 'buttons':
+                    minPrice = 75000; maxPrice = 180000;
+                    break;
+                case 'charger':
+                    minPrice = 75000; maxPrice = 280000;
+                    break;
+                case 'camera':
+                    minPrice = 100000; maxPrice = 450000;
+                    break;
+                case 'software':
+                    minPrice = 100000; maxPrice = 250000;
+                    break;
+                case 'board':
+                    minPrice = 350000; maxPrice = 1500000;
+                    break;
+                case 'adware':
+                    minPrice = 0; maxPrice = 0;
+                    break;
+            }
+
+            // Apply brand multipliers
+            if (brand === 'iphone' && repair !== 'adware') {
+                minPrice = Math.round(minPrice * 1.35);
+                maxPrice = Math.round(maxPrice * 1.45);
+            }
+
+            // Formatting output
+            const formatter = new Intl.NumberFormat('id-ID', {
+                style: 'currency',
+                currency: 'IDR',
+                maximumFractionDigits: 0
+            });
+
+            let formattedPrice = "";
+            if (minPrice === 0 && maxPrice === 0) {
+                formattedPrice = "GRATIS (Tanpa Biaya)";
+                costTag.innerText = "Bantuan Gratis";
+                costTag.className = "text-[10px] px-2 py-0.5 bg-emerald-500/20 text-emerald-400 rounded-full font-bold";
+            } else {
+                formattedPrice = `${formatter.format(minPrice)} - ${formatter.format(maxPrice)}`;
+                costTag.innerText = "Terhitung Jasa";
+                costTag.className = "text-[10px] px-2 py-0.5 bg-accent/20 text-accent rounded-full font-bold";
+            }
+            
+            estimatedPrice.innerText = formattedPrice;
+            
+            const selectedBrandText = brandSelect.options[brandSelect.selectedIndex].text;
+            const selectedRepairText = repairTypeSelect.options[repairTypeSelect.selectedIndex].text;
+            const hpModelText = model ? model : "(Tidak disebutkan)";
+            
+            const waText = encodeURIComponent(
+                `Halo Maharadja Store Blitar, saya ingin tanya servis untuk HP saya:\nMerek: ${selectedBrandText}\nTipe/Seri: ${hpModelText}\nKeluhan: ${selectedRepairText}\nEstimasi Web: ${formattedPrice}. Mohon info lanjut.`
+            );
+            waClaimBtn.href = `https://wa.me/6285815661278?text=${waText}`;
+            estimatorResult.classList.remove('hidden');
+        }
+
+
+        // ================= GEMINI AI CONSULTANT LOGIC =================
+        const apiKey = ""; // Runtime-injected environment key
+        const chatArea = document.getElementById('chatArea');
+        const aiInput = document.getElementById('aiInput');
+        const aiSendBtn = document.getElementById('aiSendBtn');
+
+        // Robust fetch helper with Exponential Backoff
+        async function fetchWithRetry(url, options, maxRetries = 5) {
+            let delay = 1000;
+            for (let i = 0; i < maxRetries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) {
+                        return await response.json();
+                    }
+                    if (response.status !== 429 && response.status < 500) {
+                        throw new Error(`Request failed with status ${response.status}`);
+                    }
+                } catch (error) {
+                    if (i === maxRetries - 1) throw error;
+                }
+                await new Promise(resolve => setTimeout(resolve, delay));
+                delay *= 2;
+            }
+        }
+
+        function appendMessage(sender, text) {
+            const messageWrapper = document.createElement('div');
+            messageWrapper.className = `flex gap-3 max-w-[85%] ${sender === 'user' ? 'ml-auto justify-end' : ''}`;
+
+            const content = sender === 'user' 
+                ? `
+                    <div class="bg-gradient-to-r from-maharadja to-blue-700 text-slate-100 rounded-2xl rounded-tr-none p-4 text-sm leading-relaxed shadow-sm">
+                        ${text}
+                    </div>
+                `
+                : `
+                    <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 text-sm">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-900/60 border border-white/5 rounded-2xl rounded-tl-none p-4 text-sm text-slate-300 leading-relaxed shadow-sm">
+                        ${text.replace(/\n/g, '<br>')}
+                    </div>
+                `;
+            
+            messageWrapper.innerHTML = content;
+            chatArea.appendChild(messageWrapper);
+            chatArea.scrollTop = chatArea.scrollHeight;
+        }
+
+        function useSuggest(query) {
+            aiInput.value = query;
+            sendChatMessage();
+        }
+
+        async function sendChatMessage() {
+            const query = aiInput.value.trim();
+            if (!query) return;
+
+            appendMessage('user', query);
+            aiInput.value = '';
+            
+            aiSendBtn.disabled = true;
+            aiInput.disabled = true;
+
+            const loadingBubble = document.createElement('div');
+            loadingBubble.className = "flex gap-3 max-w-[85%] animate-pulse";
+            loadingBubble.id = "ai-loading";
+            loadingBubble.innerHTML = `
+                <div class="w-8 h-8 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent shrink-0 text-sm">
+                    <i class="fa-solid fa-spinner animate-spin"></i>
+                </div>
+                <div class="bg-slate-900/40 border border-white/5 rounded-2xl rounded-tl-none p-4 text-xs text-slate-500 italic">
+                    CS sedang mengetik balasan...
+                </div>
+            `;
+            chatArea.appendChild(loadingBubble);
+            chatArea.scrollTop = chatArea.scrollHeight;
+
+            // UPDATED SYSTEM PROMPT: Strictly instructs AI never to spell out numbers and always direct to bottom details/WA button
+            const systemPrompt = `Anda adalah Customer Service (CS) resmi, ramah, bersahabat, dan santai dari Maharadja Store Kota Blitar. 
+Jawablah pelanggan dengan sangat SINGKAT, PADAT, santai, dan bersahabat layaknya sedang chat personal di WhatsApp.
+Maksimal jawaban Anda adalah 1-3 kalimat saja! Jangan pernah menggunakan format daftar poin panjang lebar atau penjelasan berbelit-belit.
+PENTING & WAJIB: Jangan pernah menuliskan atau menyebutkan nomor handphone, nomor WhatsApp, nomor telepon, atau angka kontak secara langsung di dalam pesan percakapan Anda untuk mencegah kesalahan data. Jika pelanggan menanyakan kontak, nomor HP, atau cara menghubungi, instruksikan mereka dengan ramah untuk:
+1. "Scroll layar ke paling bawah untuk melihat detail kontak, jam operasional, alamat lengkap, dan Google Maps kami secara jelas."
+2. ATAU "Cukup klik tombol logo WhatsApp hijau melayang di pojok kanan bawah layar handphone Kakak untuk langsung tersambung obrolan dengan admin rill kami."
+Arahkan juga mereka untuk membawa HP-nya secara langsung ke toko offline di Jl. Veteran Selatan No.181, Sananwetan, Blitar untuk dilakukan cek fisik gratis oleh teknisi Maharadja Store.`;
+
+            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+
+            const payload = {
+                contents: [{ parts: [{ text: query }] }],
+                systemInstruction: { parts: [{ text: systemPrompt }] }
+            };
+
+            try {
+                const data = await fetchWithRetry(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const loader = document.getElementById('ai-loading');
+                if (loader) loader.remove();
+
+                const aiResponse = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                if (aiResponse) {
+                    appendMessage('ai', aiResponse);
+                } else {
+                    appendMessage('ai', "Boleh diulangi pertanyaannya Kak? Tadi agak nge-lag sebentar.");
+                }
+            } catch (error) {
+                const loader = document.getElementById('ai-loading');
+                if (loader) loader.remove();
+
+                appendMessage('ai', "Aduh maaf Kak, jaringan CS sedang bermasalah. Klik tombol WhatsApp di pojok kanan bawah aja yuk biar langsung dijawab sama admin rill kami!");
+                console.error("Gemini API Error: ", error);
+            } finally {
+                aiSendBtn.disabled = false;
+                aiInput.disabled = false;
+                aiInput.focus();
+            }
+        }
+
+        function handleChatKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendChatMessage();
+            }
+        }
+    </script>
+</body>
+</html>
