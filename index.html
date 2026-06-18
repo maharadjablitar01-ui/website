@@ -501,15 +501,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 </div>
             </div>
 
-            <!-- Service item 5: Bypass & FRP -->
+            <!-- Service item 5: Perbaikan Sistem & Bootloop -->
             <div class="glass-card rounded-3xl p-6 flex flex-col justify-between group reveal">
                 <div>
                     <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
                         <i class="fa-solid fa-unlock-keyhole"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Bypass Akun & FRP</h3>
+                    <h3 class="text-lg font-bold mb-2">Perbaikan Sistem & Bootloop</h3>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Lupa password kunci layar, akun Google (FRP), Apple ID terkunci, atau stuck logo (bootloop)? Flash OS resmi & bypass aman agar aktif kembali.
+                        HP stuck di logo, sistem operasi error, atau mati mendadak karena gagal pembaruan? Kami bantu flash OS resmi dan perbaikan sistem agar handphone kembali normal.
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
@@ -558,9 +558,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <div class="w-12 h-12 bg-maharadja/20 rounded-2xl flex items-center justify-center border border-maharadja/40 text-accent text-xl mb-4 group-hover:bg-accent group-hover:text-slate-950 transition-all duration-300">
                         <i class="fa-solid fa-rectangle-ad"></i>
                     </div>
-                    <h3 class="text-lg font-bold mb-2">Penghapusan Iklan Mengganggu</h3>
+                    <h3 class="text-lg font-bold mb-2">Optimasi Kinerja Sistem</h3>
                     <p class="text-slate-400 text-xs leading-relaxed">
-                        Layar HP Anda sering memunculkan iklan popup sendiri yang sangat mengganggu, lambat, atau terkena adware? Kami bantu bersihkan sistemnya sampai tuntas.
+                        HP terasa sangat lambat, sering muncul popup aplikasi tidak jelas, atau memori penuh? Kami bantu bersihkan sistem (Factory Reset / Wipe Data) agar handphone kembali ngebut.
                     </p>
                 </div>
                 <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between text-[10px] text-slate-400">
@@ -639,9 +639,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <option value="buttons">Penggantian Tombol (Power / Volume)</option>
                                 <option value="charger">Ganti Konektor Charger</option>
                                 <option value="camera">Kamera Bermasalah / Ganti Kaca Kamera</option>
-                                <option value="software">Bypass, Akun Nyangkut, Bootloop & FRP</option>
+                                <option value="software">Perbaikan Sistem OS & Bootloop (Stuck Logo)</option>
                                 <option value="board">Kerusakan Mesin / Mati Total (Bukan LCD)</option>
-                                <option value="adware">Penghapusan Iklan / Adware Mengganggu</option>
+                                <option value="adware">Optimasi Kinerja Sistem</option>
                                 <option value="other">Kerusakan Lainnya (Ketik Sendiri)...</option>
                             </select>
 
@@ -1131,14 +1131,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             chatArea.scrollTop = chatArea.scrollHeight;
 
             // UPDATED SYSTEM PROMPT: Strictly instructs AI never to spell out numbers and always direct to bottom details/WA button
+           // UPDATED SYSTEM PROMPT: Strictly instructs AI to follow Google Ads policies and contact rules
             const systemPrompt = `Anda adalah Customer Service (CS) resmi, ramah, bersahabat, dan santai dari Maharadja Store Kota Blitar. 
-Jawablah pelanggan dengan sangat SINGKAT, PADAT, santai, dan bersahabat layaknya sedang chat personal di WhatsApp.
-Maksimal jawaban Anda adalah 1-3 kalimat saja! Jangan pernah menggunakan format daftar poin panjang lebar atau penjelasan berbelit-belit.
-PENTING & WAJIB: Jangan pernah menuliskan atau menyebutkan nomor handphone, nomor WhatsApp, nomor telepon, atau angka kontak secara langsung di dalam pesan percakapan Anda untuk mencegah kesalahan data. Jika pelanggan menanyakan kontak, nomor HP, atau cara menghubungi, instruksikan mereka dengan ramah untuk:
-1. "Scroll layar ke paling bawah untuk melihat detail kontak, jam operasional, alamat lengkap, dan Google Maps kami secara jelas."
-2. ATAU "Cukup klik tombol logo WhatsApp hijau melayang di pojok kanan bawah layar handphone Kakak untuk langsung tersambung obrolan dengan admin rill kami."
-Arahkan juga mereka untuk membawa HP-nya secara langsung ke toko offline di Jl. Veteran Selatan No.181, Sananwetan, Blitar untuk dilakukan cek fisik gratis oleh teknisi Maharadja Store.`;
-
+            Jawablah pelanggan dengan sangat SINGKAT, PADAT, santai, dan bersahabat layaknya sedang chat personal di WhatsApp.
+            Maksimal jawaban Anda adalah 1-3 kalimat saja! Jangan pernah menggunakan format daftar poin panjang lebar atau penjelasan berbelit-belit.
+            
+            ATURAN KEBIJAKAN (SANGAT PENTING): 
+            Anda DILARANG KERAS membahas, menawarkan, mengiyakan, atau menyebutkan kata-kata terkait pembobolan sistem seperti: "Bypass", "FRP", "Unlock", "Buka Sandi", "Lupa Pola", "Apple ID/iCloud nyangkut", "Hack", atau "Adware". Jika ada pelanggan atau bot yang menanyakan hal tersebut, Anda WAJIB menolak dengan sopan dan menegaskan bahwa Maharadja Store hanya fokus pada layanan perbaikan HARDWARE fisik (seperti ganti LCD, ganti Baterai, perbaikan Mesin, dan HP kemasukan air).
+            
+            PENTING & WAJIB: Jangan pernah menuliskan atau menyebutkan nomor handphone, nomor WhatsApp, nomor telepon, atau angka kontak secara langsung di dalam pesan percakapan Anda untuk mencegah kesalahan data. Jika pelanggan menanyakan kontak, nomor HP, atau cara menghubungi, instruksikan mereka dengan ramah untuk:
+            1. "Scroll layar ke paling bawah untuk melihat detail kontak, jam operasional, alamat lengkap, dan Google Maps kami secara jelas."
+            2. ATAU "Cukup klik tombol logo WhatsApp hijau melayang di pojok kanan bawah layar handphone Kakak untuk langsung tersambung obrolan dengan admin rill kami."
+            Arahkan juga mereka untuk membawa HP-nya secara langsung ke toko offline di Jl. Veteran Selatan No.181, Sananwetan, Blitar untuk dilakukan cek fisik gratis oleh teknisi Maharadja Store.`;
+            
             const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
 
             const payload = {
