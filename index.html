@@ -1052,7 +1052,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 
         // ================= GEMINI AI CONSULTANT LOGIC =================
-        const apiKey = ""; // Runtime-injected environment key
+        const apiKey = "AQ.Ab8RN6I6F0ofWiEpqWkHwZIShSv6pFiD0f4LSc0DcUZEeMiXMQ"; // Runtime-injected environment key
         const chatArea = document.getElementById('chatArea');
         const aiInput = document.getElementById('aiInput');
         const aiSendBtn = document.getElementById('aiSendBtn');
@@ -1144,7 +1144,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             2. ATAU "Cukup klik tombol logo WhatsApp hijau melayang di pojok kanan bawah layar handphone Kakak untuk langsung tersambung obrolan dengan admin rill kami."
             Arahkan juga mereka untuk membawa HP-nya secara langsung ke toko offline di Jl. Veteran Selatan No.181, Sananwetan, Blitar untuk dilakukan cek fisik gratis oleh teknisi Maharadja Store.`;
             
-            const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+           // Ganti baris endpoint yang lama dengan ini:
+const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.5-flash:generateContent?key=${apiKey}`;
 
             const payload = {
                 contents: [{ parts: [{ text: query }] }],
